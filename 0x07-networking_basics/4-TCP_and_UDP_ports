@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Displays listening socket that shows the name and PID of which socket belongs
+netstat -l --program
