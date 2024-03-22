@@ -1,4 +1,4 @@
- # script that manifests killmenow
+# script that manifests killmenow
 exec { 'killmenow':
 	command => 'pkill killmenow',
 	path    => '/usr/bin/',
