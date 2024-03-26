@@ -1,22 +1,13 @@
-# Include Standard Library
-include stdlib
+# Puppet manifest to configure SSH client
 
-# Turn off password authentication
-file { '/etc/ssh/ssh_config':
-  ensure  => file,
-  content => template('module_name/ssh_config.erb'), # If you have a template file
+file_line { 'Turn off passwd auth':
+  path   => '/etc/ssh/ssh_config',
+  line   => 'PasswordAuthentication no',
+  match  => '^#PasswordAuthentication',
 }
 
-file_line { 'Turn off PasswordAuthentication':
-  ensure  => present,
-  path    => '/etc/ssh/ssh_config',
-  line    => 'PasswordAuthentication no',
+file_line { 'Declare identity file':
+  path   => '/etc/ssh/ssh_config',
+  line   => 'IdentityFile ~/.ssh/school',
+  match  => '^#IdentityFile',
 }
-
-# Declare identity file
-file_line { 'Declare IdentityFile':
-  ensure  => present,
-  path    => '/etc/ssh/ssh_config',
-  line    => 'IdentityFile ~/.ssh/school',
-}
-
