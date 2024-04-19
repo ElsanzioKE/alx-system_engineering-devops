@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# Script to change the root user to nginx
 # Stop apache if its running
 pkill apache2
 
