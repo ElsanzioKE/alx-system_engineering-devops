@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
-@author: Prudence Wambui
+@author: Elly Lesanjore
 """
 from json import dump
 from requests import get
